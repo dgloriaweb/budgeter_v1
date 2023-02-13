@@ -16,6 +16,7 @@ return new class extends Migration
     {
         Schema::create('mileages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->date('date');
             $table->mediumInteger('mileage')->nullable();
             $table->smallInteger('partner_id');

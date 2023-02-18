@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mileage;
+use App\Models\Partner;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class MileageController extends Controller
+class PartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class MileageController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Mileages/Index', [
-            //
-        ]);
+        //
     }
 
     /**
@@ -39,17 +36,10 @@ class MileageController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'date' => 'required|date',
-            'mileage' => 'required|integer',
-            'partner_id' => 'required|integer',
-            'location_id_start' => 'required|integer',
-            'location_id_end' => 'required|integer',
-            'personal_travel_at_start' => 'integer',
-            'personal_travel_at_start' => 'integer',
-            'comments' => 'required|string|max:255',
+            'partner' => 'required|string|max:255',
         ]);
 
-        $request->user()->mileages()->create($validated);
+        $request->partners()->create($validated);
 
         return redirect(route('mileages.index'));
     }
@@ -57,10 +47,10 @@ class MileageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Mileage  $mileage
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function show(Mileage $mileage)
+    public function show(Partner $partner)
     {
         //
     }
@@ -68,10 +58,10 @@ class MileageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Mileage  $mileage
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mileage $mileage)
+    public function edit(Partner $partner)
     {
         //
     }
@@ -80,10 +70,10 @@ class MileageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mileage  $mileage
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Mileage $mileage)
+    public function update(Request $request, Partner $partner)
     {
         //
     }
@@ -91,10 +81,10 @@ class MileageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Mileage  $mileage
+     * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mileage $mileage)
+    public function destroy(Partner $partner)
     {
         //
     }

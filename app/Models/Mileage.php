@@ -21,8 +21,14 @@ class Mileage extends Model
     ];
 
     /** Relationships */
+    /* mileage data belongs to one user */
     public function User()
     {
         return $this->belongsTo(User::class);
+    }
+    /* mileage data belongs to one partner */
+    public function Partner()
+    {
+        return $this->belongsTo(Partner::class);
     }
 }

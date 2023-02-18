@@ -13,7 +13,7 @@
         <input type="hidden" v-model="form.partner_id" />
         <input type="hidden" v-model="form.location_id_start" />
         <input type="hidden" v-model="form.location_id_end" />
-       
+
         <textarea
           v-model="form.comments"
           placeholder="What's on your mind?"

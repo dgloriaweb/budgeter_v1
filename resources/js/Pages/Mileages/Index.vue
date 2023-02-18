@@ -13,8 +13,7 @@
         <input type="hidden" v-model="form.partner_id" />
         <input type="hidden" v-model="form.location_id_start" />
         <input type="hidden" v-model="form.location_id_end" />
-        <input type="hidden" v-model="form.is_personal" />
-
+       
         <textarea
           v-model="form.comments"
           placeholder="What's on your mind?"
@@ -44,7 +43,7 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import { useForm, Head } from '@inertiajs/vue3';
 
 const form = useForm({
-  date: '13-02-2023',
+  date: '2023-02-13',
   mileage: '45608',
   partner_id: '1',
   location_id_start: '1',

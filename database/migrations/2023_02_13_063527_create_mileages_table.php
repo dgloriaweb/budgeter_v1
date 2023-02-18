@@ -22,7 +22,8 @@ return new class extends Migration
             $table->smallInteger('partner_id');
             $table->smallInteger('location_id_start');
             $table->smallInteger('location_id_end');
-            $table->boolean('is_personal');
+            $table->mediumInteger('personal_travel_at_start')->nullable();
+            $table->mediumInteger('personal_travel_at_end')->nullable();
             $table->string('comments')->nullable();
             $table->timestamps();
         });
